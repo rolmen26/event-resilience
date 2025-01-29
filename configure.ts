@@ -8,4 +8,6 @@ export async function configure(command: Configure) {
   await codemods.updateRcFile((rcFile: any) => {
     rcFile.addCommand('event-resilience/commands')
   })
+
+  command.logger.action('configured')
 }
