@@ -1,0 +1,5 @@
+# We exclude everything 
+*
+
+# Only build files
+!build/

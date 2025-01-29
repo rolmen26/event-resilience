@@ -1,6 +1,6 @@
 {
   "name": "event-resilience",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "type": "module",
   "license": "MIT",
   "engines": {
@@ -91,8 +91,9 @@
       "tests/**"
     ]
   },
+  "homepage": "https://github.com/rolmen26/event-resilience",
   "repository": {
     "type": "git",
-    "url": "git+"
+    "url": "git+https://github.com/rolmen26/event-resilience.git"
   }
 }
