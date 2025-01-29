@@ -1,1 +1,1 @@
-console.log('Hello, world!')
+export { ExampleClass } from './src/example_class.js'
