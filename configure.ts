@@ -12,14 +12,17 @@ export async function configure(command: Configure) {
   })
 
   await generateMigration(command, codemods, 'create_example_table')
-
-  command.logger.info('Migration created successfully')
 }
 
 async function generateMigration(command: Configure, codemods: Codemods, name: string) {
-  const stubPath = `database/migrations/${name}.stub`
-  const prefix = new Date().getTime()
-  await codemods.makeUsingStub(stubsRoot, stubPath, {
-    filePath: command.app.migrationsPath(`${prefix}_${name}.ts`),
-  })
+  try {
+    const stubPath = `database/migrations/${name}.stub`
+    const prefix = new Date().getTime()
+    await codemods.makeUsingStub(stubsRoot, stubPath, {
+      filePath: command.app.migrationsPath(`${prefix}_${name}.ts`),
+    })
+    command.logger.info('Migration created successfully')
+  } catch (error) {
+    command.logger.error(`An error occurred while creating the migration: ${error.message}`)
+  }
 }

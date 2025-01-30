@@ -30,7 +30,7 @@
     "postcompile": "npm run index:commands && npm run copy:templates",
     "dev": "node ace serve --hmr",
     "test": "c8 node --enable-source-maps --import=ts-node-maintained/register/esm bin/test.ts",
-    "lint": "eslint --fix",
+    "lint": "eslint .",
     "format": "prettier --write .",
     "typecheck": "tsc --noEmit",
     "index:commands": "adonis-kit index build/commands"
