@@ -17,7 +17,7 @@ export async function configure(command: Configure) {
 }
 
 async function generateMigration(command: Configure, codemods: Codemods, name: string) {
-  const stubPath = `stubs/database/migrations/${name}.stub`
+  const stubPath = `database/migrations/${name}.stub`
   const prefix = new Date().getTime()
   await codemods.makeUsingStub(stubsRoot, stubPath, {
     filePath: command.app.migrationsPath(`${prefix}_${name}.ts`),

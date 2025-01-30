@@ -1,3 +1,4 @@
 import { getDirname } from '@poppinss/utils'
+import { join } from 'node:path'
 
-export const stubsRoot = getDirname(import.meta.url)
+export const stubsRoot = join(getDirname(import.meta.url), 'stubs')
